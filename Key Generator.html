@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <nav id="navbar" class="navbar navbar-light bg-light" data-spy="affix">
+            <div class="container-fluid">
+                <h2>Key Generator</h2>
+
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <button class="form-control col mb-3 mt-3" id="keygen">Generate a Key</button>
+
+        <input class="form-control col" readonly id="apikey" type="text" title="APIKey" value="" placeholder="Click on the button to generate a new key ..." />
+
+    </div>
+
+    <script>
+        function generateUUID() {
+    var d = new Date().getTime();
+
+    if (window.performance && typeof window.performance.now === "function") {
+        d += performance.now();
+    }
+
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = (d + Math.random() * 16) % 16 | 0;
+        d = Math.floor(d / 16);
+        return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+
+    return uuid;
+}
+
+/**
+ * Generate new key and insert into input value
+ */
+document.getElementById('keygen').addEventListener('click', function(e) {
+    document.getElementById('apikey').value = (generateUUID());
+})
+    </script>
+</body>
+
+</html>
