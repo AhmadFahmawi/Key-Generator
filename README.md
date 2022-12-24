@@ -4,7 +4,7 @@ Simple Key Generator - Generating random 36 alphanumeric characters
 
 # How to use - End users
 Download the file, click on Key Generator.html
-It will run on your browser, simple hit the Generate a Key button
+It will run on your browser, hit the Generate a Key button
 
 # For developers
 JS script embeded in the html file
